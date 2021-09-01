@@ -1,0 +1,112 @@
+#title {
+    margin-top: 2%;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+#title input {
+    padding-left: 10px;
+    margin-left: 10px;
+    width: 85%;
+    height: 40px;
+    border-style: solid;
+    border-color: white;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02cm;
+    border-radius: 8px;
+    border-width: 5px;
+    color: white;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#title::placeholder {
+    padding-left: 1px;
+}
+
+#body textarea {
+    padding-top: 5px;
+    padding-left: 8px;
+    margin-left: 10px;
+    width: 48%;
+    height: 500px !important;
+    border-style: solid;
+    border-color: white;
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.02cm;
+    border-radius: 10px;
+    border-width: 5px;
+    color: white;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(18px);
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.5;
+    font-size: 30px;
+    padding-left: 2px;
+    font-style: italic;
+}
+
+.buttons {
+    margin-top: 0.7%;
+    width: 50%;
+}
+
+
+#send_btn {
+    margin-left: 74%;
+    width: 10%;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 100%;
+    border-top: solid white 2px;
+    border-bottom: solid white 2px;
+    border-left: solid white 4px;
+    border-right: solid white 4px;
+    border-radius: 5px;
+    background-color: transparent;
+    letter-spacing: 0.01cm;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#send_btn:hover {
+    color: purple;
+    background-color: white;
+}
+
+#home_btn {
+    margin-left: 3%;
+    width: 10%;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 100%; /*17px*/
+    border-top: solid white 2px;
+    border-bottom: solid white 2px;
+    border-left: solid white 4px;
+    border-right: solid white 4px;
+    border-radius: 5px;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#home_btn:hover {
+    color: purple;
+    background-color: white;
+}
+
+
+#link {
+    color: white;
+    text-decoration: none;
+}
