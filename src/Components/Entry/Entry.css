@@ -1,0 +1,156 @@
+#title {
+    margin-top: 2%;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+#title input {
+    padding-left: 10px;
+    margin-left: 10px;
+    width: 85%;
+    height: 40px;
+    border-style: solid;
+    border-color: white;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02cm;
+    border-radius: 8px;
+    border-width: 5px;
+    color: white;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#title::placeholder {
+    padding-left: 1px;
+}
+
+#body textarea {
+    padding-top: 5px;
+    padding-left: 8px;
+    margin-left: 10px;
+    width: 48%;
+    height: 500px !important;
+    border-style: solid;
+    border-color: white;
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.02cm;
+    border-radius: 10px;
+    border-width: 5px;
+    color: white;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(18px);
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.5;
+    font-size: 30px;
+    padding-left: 2px;
+    font-style: italic;
+}
+
+.buttons {
+    margin-top: 0.7%;
+    width: 50%;
+}
+
+
+#send_btn {
+    margin-left: 74%;
+    width: 10%;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 100%;
+    border-top: solid white 2px;
+    border-bottom: solid white 2px;
+    border-left: solid white 4px;
+    border-right: solid white 4px;
+    border-radius: 5px;
+    background-color: transparent;
+    letter-spacing: 0.01cm;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#send_btn:hover {
+    color: purple;
+    background-color: white;
+}
+
+#home_btn {
+    margin-left: 3%;
+    width: 10%;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 100%; /*17px*/
+    border-top: solid white 2px;
+    border-bottom: solid white 2px;
+    border-left: solid white 4px;
+    border-right: solid white 4px;
+    border-radius: 5px;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#home_btn:hover {
+    color: purple;
+    background-color: white;
+}
+
+
+#link {
+    color: white;
+    text-decoration: none;
+}
+
+#entryTable {
+    float: right;
+    /*background-color: rgb(255, 255, 255, 0.95);*/
+    margin-top: 3.5%;
+    margin-right: 1%;
+    overflow-y: auto;
+    width: 40%;
+    height: 500px;
+    border: solid rgb(156, 156, 156) 4px;
+    border-radius: 15px;
+}
+
+/*
+#tableEntry {
+    border-top: solid rgb(212, 211, 211) 2px;
+    border-bottom: solid rgb(212, 211, 211) 2px;
+    min-height: 90px;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+#tableEntry h2 {
+    color: rgb(41, 41, 41);
+    font-family: 'Open Sans', sans-serif;
+    width: 50%;
+    margin-top: 10px;
+    size: 100px;
+}
+
+#tableEntry p {
+    color: rgb(158, 158, 158);
+    width: 50%;
+    height: 10px;
+    margin-top: 15px;
+}
+
+#tableEntry h3 {
+    color: rgb(46, 46, 46);
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+*/
