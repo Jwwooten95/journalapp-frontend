@@ -57,7 +57,7 @@ export default class Entry extends Component {
         const entry = {
             title: this.state.title,
             body: this.state.body,
-            creationDate: this.state.creationDate,
+            creationDate: this.state.creationDate.toLocaleDateString(),
             editDate: this.state.editDate
         }
 

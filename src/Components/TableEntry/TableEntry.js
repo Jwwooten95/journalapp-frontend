@@ -7,15 +7,18 @@ export default class TableEntry extends Component {
         this.state = {
             id: props.entry.id,
             title: props.entry.title,
-            body: props.entry.body
+            body: props.entry.body,
+            creationDate: props.entry.creationDate,
+            editDate: props.entry.editDate
         }
     }
 
     render() {
         return(
             <div id="entry">
-                <h5>{this.state.id}</h5>
-                <h3>{this.state.title}</h3>
+                <h3>{this.state.creationDate}</h3>
+                <h2>{this.state.title}</h2>
+                
                 <p>{this.state.body}</p>
             </div>
         )
