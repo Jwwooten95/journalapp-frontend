@@ -110,3 +110,47 @@
     color: white;
     text-decoration: none;
 }
+
+#entryTable {
+    float: right;
+    /*background-color: rgb(255, 255, 255, 0.95);*/
+    margin-top: 3.5%;
+    margin-right: 1%;
+    overflow-y: auto;
+    width: 40%;
+    height: 500px;
+    border: solid rgb(156, 156, 156) 4px;
+    border-radius: 15px;
+}
+
+/*
+#tableEntry {
+    border-top: solid rgb(212, 211, 211) 2px;
+    border-bottom: solid rgb(212, 211, 211) 2px;
+    min-height: 90px;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+#tableEntry h2 {
+    color: rgb(41, 41, 41);
+    font-family: 'Open Sans', sans-serif;
+    width: 50%;
+    margin-top: 10px;
+    size: 100px;
+}
+
+#tableEntry p {
+    color: rgb(158, 158, 158);
+    width: 50%;
+    height: 10px;
+    margin-top: 15px;
+}
+
+#tableEntry h3 {
+    color: rgb(46, 46, 46);
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+*/
