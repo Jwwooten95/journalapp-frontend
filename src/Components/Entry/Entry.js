@@ -80,8 +80,10 @@ export default class Entry extends Component {
         return this.state.listOfEntries.map((entry, index) => {
             const {id, title, body, creationDate, editDate} = entry
             return (
-                <div key={id}>
+                <div key={id} id="tableEntry">
                     <TableEntry entry={entry}/>
+                    <button>Edit</button>
+                    <button>Delete</button>
                 </div>
             )
         })
@@ -109,15 +111,3 @@ export default class Entry extends Component {
         )
     }
 }
-
-// function TableEntry(props) {
-//     var id = props.entry.id;
-//     var editDate = props.entry.editDate;
-//     return(
-//         <div id="tableEntry">
-//                 <h3>{props.entry.creationDate}</h3>
-//                 <h2>{props.entry.title}</h2>
-//                 <p>{props.entry.body}</p>
-//         </div>
-//     );
-// }
