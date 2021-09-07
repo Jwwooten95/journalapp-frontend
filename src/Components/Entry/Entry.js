@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './Entry.css';
 import EntryMode from '../EntryMode/EntryMode.js';
-import TableEntry from '../TableEntry/TableEntry.js'
-import axios from 'axios'
 import EditMode from '../EditMode/EditMode';
 
 export default class Entry extends Component {
@@ -59,7 +56,7 @@ export default class Entry extends Component {
                     editModeId={this.state.editModeId}
                     editModeTitle={this.state.editModeTitle}
                     editModeBody={this.state.editModeBody}
-                    editModeDate={this.editModeDate}
+                    editModeDate={this.state.editModeDate}
                     cancelEdit = {this.cancelEdit}
                 />
                 :
