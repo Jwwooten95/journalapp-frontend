@@ -12,13 +12,7 @@ export default class Entry extends Component {
             body:'',
             creationDate: new Date(),
             editDate: null,
-            listOfEntries: [],
-            //example array
-            myArray: [
-                {id: 1, title: 'asdasds', body: "body1"},
-                {id: 2, title: 'dfgfdgfg', body: "body2"},
-                {id: 3, title: 'lkjkljljk', body: "body3"}
-            ]
+            listOfEntries: []
         }
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleBodyChange = this.handleBodyChange.bind(this);
