@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Entry.css';
+import EntryMode from '../EntryMode/EntryMode.js';
 import TableEntry from '../TableEntry/TableEntry.js'
 import axios from 'axios'
+import EditMode from '../EditMode/EditMode';
 
 export default class Entry extends Component {
     constructor(props) {
@@ -12,95 +14,59 @@ export default class Entry extends Component {
             body:'',
             creationDate: new Date(),
             editDate: null,
-            listOfEntries: []
+            listOfEntries: [],
+            editMode: false,
+            editModeId:'',
+            editModeTitle:'',
+            editModeBody:'',
+            editModeDate:'',
         }
-        this.handleTitleChange = this.handleTitleChange.bind(this);
-        this.handleBodyChange = this.handleBodyChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.enterEditModeForEntry = this.enterEditModeForEntry.bind(this);
     }
 
     componentDidMount() {
-        this.getAllEntries();
-    }
-
-    handleTitleChange(event) {
-        this.setState({title: event.target.value})
-    }
-
-    handleBodyChange(event) {
-        this.setState({body: event.target.value})
-    }
-
-    async getAllEntries() {
-        axios.get('http://localhost:8080/entry/allEntries')
-        .then(response => {
-            this.setState({
-                listOfEntries: [...this.state.listOfEntries, ...response.data]
-            })
-            console.log(this.state.listOfEntries)
-
-        })
-        .catch(error => {
-            console.log(error);
-        })
         
-        //event.preventDefault();
+    }    
+
+    //This function should only be called from the 'edit' button in one of the table entries
+    enterEditModeForEntry(id, title, body, creationDate) {
+        this.setState({
+            editModeId: id,
+            editModeTitle: title,
+            editModeBody: body,
+            editModeDate: creationDate,
+            editMode: true
+        });
     }
 
-    async handleSubmit(event) {
-        const entry = {
-            title: this.state.title,
-            body: this.state.body,
-            creationDate: this.state.creationDate.toLocaleDateString(),
-            editDate: this.state.editDate
-        }
-
-        axios.post('http://localhost:8080/entry', entry)
-        .then(response => {
-            console.log(response);
-        })
-        .catch(error => {
-            console.log(error);
-        })
-        event.preventDefault();
-
-        console.log(this.state.title);
-        console.log(this.state.body);
-        console.log(this.state.creationDate);
-        console.log(this.state.editDate);
-    }
-
-    renderTableData() {
-        return this.state.listOfEntries.map((entry, index) => {
-            const {id, title, body, creationDate, editDate} = entry
-            return (
-                <div key={id} id="tableEntry">
-                    <TableEntry entry={entry}/>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </div>
-            )
+    cancelEdit() {
+        this.setState({
+            editModeId: '',
+            editModeTitle: '',
+            editModeBody: '',
+            editModeDate: '',
+            editMode: false
         })
     }
 
     render() {
+        const isEditing = this.state.editMode;
         return(
-            <div id="container">
-                <div id="entryTable">
-                    {this.renderTableData()}
-                </div>
-                <form onSubmit={this.handleSubmit}>
-                    <div id="title">
-                            <input type="text" name="title" onChange={this.handleTitleChange} placeholder="Title"></input>
-                    </div>
-                    <div id="body">
-                            <textarea name="body" onChange={this.handleBodyChange}  placeholder="My Thoughts Are..."></textarea>
-                    </div>
-                    <div className="buttons">
-                            <Link id="link" to="/"><button id="home_btn">HOME</button></Link>
-                            <button type="submit" id="send_btn">SEND</button>   
-                    </div>
-                </form>
+            <div>
+                {isEditing ?
+                <EditMode
+                    editModeId={this.state.editModeId}
+                    editModeTitle={this.state.editModeTitle}
+                    editModeBody={this.state.editModeBody}
+                    editModeDate={this.editModeDate}
+                    cancelEdit = {this.cancelEdit}
+                />
+                :
+                <EntryMode
+                    enterEditModeForEntry = {this.enterEditModeForEntry}
+                />
+                }
             </div>
         )
     }
