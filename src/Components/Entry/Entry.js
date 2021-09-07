@@ -12,13 +12,7 @@ export default class Entry extends Component {
             body:'',
             creationDate: new Date(),
             editDate: null,
-            listOfEntries: [],
-            //example array
-            myArray: [
-                {id: 1, title: 'asdasds', body: "body1"},
-                {id: 2, title: 'dfgfdgfg', body: "body2"},
-                {id: 3, title: 'lkjkljljk', body: "body3"}
-            ]
+            listOfEntries: []
         }
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleBodyChange = this.handleBodyChange.bind(this);
@@ -80,8 +74,10 @@ export default class Entry extends Component {
         return this.state.listOfEntries.map((entry, index) => {
             const {id, title, body, creationDate, editDate} = entry
             return (
-                <div key={id}>
+                <div key={id} id="tableEntry">
                     <TableEntry entry={entry}/>
+                    <button>Edit</button>
+                    <button>Delete</button>
                 </div>
             )
         })
@@ -109,15 +105,3 @@ export default class Entry extends Component {
         )
     }
 }
-
-// function TableEntry(props) {
-//     var id = props.entry.id;
-//     var editDate = props.entry.editDate;
-//     return(
-//         <div id="tableEntry">
-//                 <h3>{props.entry.creationDate}</h3>
-//                 <h2>{props.entry.title}</h2>
-//                 <p>{props.entry.body}</p>
-//         </div>
-//     );
-// }
