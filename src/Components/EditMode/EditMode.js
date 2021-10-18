@@ -48,7 +48,7 @@ export default class EditMode extends Component {
         .catch(error => {
             console.log(error);
         })
-        this.props.exitEditMode();
+        //this.props.exitEditMode();
     }
 
     render() {
@@ -68,7 +68,7 @@ export default class EditMode extends Component {
                             <textarea name="body" defaultValue={this.state.editModeBody} onChange={this.handleBodyChange}  placeholder="My Thoughts Are..."></textarea>
                     </div>
                     <div className="buttons">
-                            <button id="cancel_btn" onClick={ () => this.props.exitEditMode()}>CANCEL</button>
+                            <button id="cancel_btn" onClick={ () => this.props.cancelEdit()}>CANCEL</button>
                             <button type="submit" id="submit_btn">SUBMIT</button> 
                     </div>
                 </form>

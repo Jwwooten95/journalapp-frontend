@@ -20,6 +20,7 @@ export default class Entry extends Component {
         }
 
         this.enterEditModeForEntry = this.enterEditModeForEntry.bind(this);
+        this.cancelEdit = this.cancelEdit.bind(this);
     }
 
     componentDidMount() {
