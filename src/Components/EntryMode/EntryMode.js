@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './EntryMode.css';
 import TableEntry from '../TableEntry/TableEntry.js'
+import DeleteEntry from '../DeleteEntry/DeleteEntry';
 import axios from 'axios'
 
 export default class EntryMode extends Component {
@@ -12,11 +13,15 @@ export default class EntryMode extends Component {
             body:'',
             creationDate: new Date(),
             editDate: null,
-            listOfEntries: []
+            listOfEntries: [],
+            deleteId:'',
+            deleteMode: false
         }
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.enterDelete = this.enterDelete.bind(this);
+        this.exitDelete = this.exitDelete.bind(this);
     }
 
     componentDidMount() {
@@ -43,8 +48,6 @@ export default class EntryMode extends Component {
         .catch(error => {
             console.log(error);
         })
-        
-        //event.preventDefault();
     }
 
     async handleSubmit(event) {
@@ -63,11 +66,22 @@ export default class EntryMode extends Component {
             console.log(error);
         })
         event.preventDefault();
+        this.props.refreshPage();
+    }
 
-        console.log(this.state.title);
-        console.log(this.state.body);
-        console.log(this.state.creationDate);
-        console.log(this.state.editDate);
+    enterDelete(id) {
+        this.setState({
+            deleteId: id,
+            deleteMode: true
+        });
+    }
+
+    exitDelete() {
+        this.setState({
+            deleteId: '',
+            deleteMode: false
+        });
+        //this.props.refreshPage();
     }
 
     renderTableData() {
@@ -81,18 +95,26 @@ export default class EntryMode extends Component {
                     <button onClick={ () =>
                         this.props.enterEditModeForEntry(id, title, body, creationDate)}>Edit
                     </button>
-                    <button>Delete</button>
+                    <button onClick={ () =>
+                        this.enterDelete(id)}>Delete</button>
                 </div>
             )
         })
     }
 
     render() {
+        const deleteMode = this.state.deleteMode
         return(
             <div id="container">
                 <div id="entryTable">
                     {this.renderTableData()}
                 </div>
+                {deleteMode == true && 
+                    <DeleteEntry
+                        id={this.state.deleteId}
+                        exitDelete={this.exitDelete}
+                    />
+                }
                 <form onSubmit={this.handleSubmit}>
                     <div id="title">
                             <input type="text" name="title" onChange={this.handleTitleChange} placeholder="Title"></input>
