@@ -93,10 +93,10 @@ export default class EntryMode extends Component {
                         entry={entry}
                     />
                     <button onClick={ () =>
-                        this.props.enterEditModeForEntry(id, title, body, creationDate)}>Edit
+                        this.props.enterEditModeForEntry(id, title, body, creationDate)}>EDIT
                     </button>
                     <button onClick={ () =>
-                        this.enterDelete(id)}>Delete</button>
+                        this.enterDelete(id)}>DELETE</button>
                 </div>
             )
         })

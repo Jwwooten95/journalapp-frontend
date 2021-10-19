@@ -132,6 +132,23 @@
 }
 
 #tableEntry button {
-    margin-left: 10px;
-    margin-bottom: 8px;
+    margin-left: 12px;
+    margin-bottom: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 12px;
+    border-top: solid rgb(160, 159, 159) 2px;
+    border-bottom: solid rgb(160, 159, 159) 2px;
+    border-left: solid rgb(160, 159, 159) 3px;
+    border-right: solid rgb(160, 159, 159) 3px;
+    color: rgb(83, 83, 83);
+    background-color: white;
+    letter-spacing: 0.01cm;
+}
+
+#tableEntry button:hover {
+    color: white;
+    background-color: rgb(160, 159, 159);
 }

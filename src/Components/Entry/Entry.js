@@ -50,7 +50,7 @@ export default class Entry extends Component {
             editModeDate: '',
             editMode: false
         })
-        this.refreshPage();
+        //this.refreshPage();
     }
 
     render() {
