@@ -10,15 +10,17 @@ export default class DeleteEntry extends Component {
         }
     }
 
-    async handleDelete(event) {
-        axios.delete('http://localhost:8080/entry/{id}', this.state.id)
-        .then(response => {
-            console.log(response);
-        })
+    async handleDelete() {
+        console.log(this.state.id);
+        await axios.delete(`http://localhost:8080/entry/${this.state.id}`)
+        .then(
+            this.setState({ id: ''})
+        )
         .catch(error => {
-            console.log(error);
+            console.log(error.response.data);
         })
-        event.preventDefault();
+        this.props.exitDelete()
+        //event.preventDefault();
     }
 
     render() {
@@ -26,8 +28,8 @@ export default class DeleteEntry extends Component {
             <div id="deleteEntry">
                 <h1>Are you sure you want to delete this entry?</h1>
                 <div>
-                    <button >YES</button>
-                    <button onClick={ () => this.props.cancelDelete()}>NO</button>
+                    <button onClick={ () => this.handleDelete()}>YES</button>
+                    <button onClick={ () => this.props.exitDelete()}>NO</button>
                 </div>
             </div>
         )

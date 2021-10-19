@@ -21,7 +21,7 @@ export default class EntryMode extends Component {
         this.handleBodyChange = this.handleBodyChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.enterDelete = this.enterDelete.bind(this);
-        this.cancelDelete = this.cancelDelete.bind(this);
+        this.exitDelete = this.exitDelete.bind(this);
     }
 
     componentDidMount() {
@@ -82,7 +82,7 @@ export default class EntryMode extends Component {
         });
     }
 
-    cancelDelete() {
+    exitDelete() {
         this.setState({
             deleteId: '',
             deleteMode: false
@@ -116,8 +116,8 @@ export default class EntryMode extends Component {
                 </div>
                 {deleteMode == true && 
                     <DeleteEntry
-                        id={this.state.id}
-                        cancelDelete={this.cancelDelete}
+                        id={this.state.deleteId}
+                        exitDelete={this.exitDelete}
                     />
                 }
                 <form onSubmit={this.handleSubmit}>
