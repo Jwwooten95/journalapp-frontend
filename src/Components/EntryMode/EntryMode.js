@@ -48,8 +48,6 @@ export default class EntryMode extends Component {
         .catch(error => {
             console.log(error);
         })
-        
-        //event.preventDefault();
     }
 
     async handleSubmit(event) {
@@ -68,11 +66,7 @@ export default class EntryMode extends Component {
             console.log(error);
         })
         event.preventDefault();
-
-        console.log(this.state.title);
-        console.log(this.state.body);
-        console.log(this.state.creationDate);
-        console.log(this.state.editDate);
+        this.props.refreshPage();
     }
 
     enterDelete(id) {
@@ -87,6 +81,7 @@ export default class EntryMode extends Component {
             deleteId: '',
             deleteMode: false
         });
+        //this.props.refreshPage();
     }
 
     renderTableData() {

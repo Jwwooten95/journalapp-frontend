@@ -48,7 +48,7 @@ export default class EditMode extends Component {
         .catch(error => {
             console.log(error);
         })
-        //this.props.exitEditMode();
+        this.props.refreshPage();
     }
 
     render() {

@@ -10,6 +10,10 @@ export default class DeleteEntry extends Component {
         }
     }
 
+    refreshPage() {
+        window.location.reload(true);
+    }
+
     async handleDelete() {
         console.log(this.state.id);
         await axios.delete(`http://localhost:8080/entry/${this.state.id}`)
@@ -19,7 +23,8 @@ export default class DeleteEntry extends Component {
         .catch(error => {
             console.log(error.response.data);
         })
-        this.props.exitDelete()
+        this.props.exitDelete();
+        this.refreshPage();
         //event.preventDefault();
     }
 
